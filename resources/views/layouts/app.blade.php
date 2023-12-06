@@ -24,7 +24,7 @@
                     Home
                 </a>
                 @auth
-                <a class="navbar-brand" href="{{ url('/profile') }}">
+                <a class="navbar-brand" href="{{ url('/user') }}">
                     Profiles
                 </a>
                 @endauth
@@ -69,10 +69,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="profile"
+                                    <a class="dropdown-item" href="/user/edit-profile"
 
-                                       onclick="event.preventDefault();">
-                                        Profile
+                                       onclick="event.preventDefault();
+                                                    redirect()->route('user.edit-profile')">
+                                        Edit Profile
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

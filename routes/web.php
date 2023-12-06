@@ -19,7 +19,10 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('/profile', [UserController::class, 'index'])->name('user.index');
+Route::get('/user', [UserController::class, 'index'])->name('user.index');
+Route::get('/user/edit-profile', [UserController::class, 'editProfile'])->name('user.editProfile');
+Route::put('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.updateProfile');
+Route::put('/user/make-admin/{user}', [UserController::class, 'makeAdmin'])->name('user.makeAdmin');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');

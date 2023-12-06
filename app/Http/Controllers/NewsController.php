@@ -9,7 +9,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news_items = News::all();
+        $news_items = News::latest()->get();
         return view('news.index', compact('news_items'));
     }
 }

@@ -8,6 +8,12 @@
                 <div class="card-header">Public Profiles</div>
 
                 <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
                     @foreach($users as $user)
                         <div class="card">
                             <div class="card-header">
@@ -18,6 +24,16 @@
                                     <div class="col-md-6 text-end">
                                         <h3>{{ $user->name }}</h3>
                                         <h4>{{ $user->birthday }}</h4>
+                                        @if($user->is_admin)
+                                            <h4>Admin</h4>
+                                        @endif
+                                        @if(Auth::user()->is_admin && !$user->is_admin)
+                                        <form action="{{ route('user.makeAdmin', $user->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button type="submit" class="btn btn-primary">Make Admin</button>
+                                        </form>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

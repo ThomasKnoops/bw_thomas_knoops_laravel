@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('title');
+            $table->string('title', 255);
             $table->text('body');
-            $table->text('cover_photo_path');
+            $table->text('cover_photo_path')->default('images/covers/placeholder.png');
             $table->timestamps();
         });
     }

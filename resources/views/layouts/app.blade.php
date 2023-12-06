@@ -28,6 +28,9 @@
                     Profiles
                 </a>
                 @endauth
+                <a class="navbar-brand" href="{{ url('/news') }}">
+                    Latest news
+                </a>
                 <a class="navbar-brand" href="{{ url('/faq') }}">
                     Faq
                 </a>

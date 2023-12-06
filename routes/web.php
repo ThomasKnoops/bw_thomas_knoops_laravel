@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
-Route::get('/profile', [UserController::class, 'index'])->name('user.index');
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/profile', [UserController::class, 'index'])->name('user.index');
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+
 Auth::routes();

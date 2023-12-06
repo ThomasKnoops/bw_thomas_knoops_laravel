@@ -14,15 +14,26 @@
                         </div>
                     @endif
 
-                    @foreach($faqs as $faq)
+                    @foreach($faq_categories as $category)
                         <div class="card">
                             <div class="card-header">
-                                {{ $faq->question }}
+                                {{ $category->name }}
                             </div>
                             <div class="card-body">
-                                {{ $faq->answer }}
+                                @foreach($category->faqs as $faq)
+                                    <div class="card">
+                                        <div class="card-header">
+                                            {{ $faq->question }}
+                                        </div>
+                                        <div class="card-body">
+                                            {{ $faq->answer }}
+                                        </div>
+                                    </div>
+                                    <br>
+                                @endforeach
                             </div>
-                        </div> <br>
+                        </div>
+                        <br>
                     @endforeach
 
                 </div>

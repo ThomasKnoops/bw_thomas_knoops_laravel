@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">FAQ</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,17 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @foreach($faqs as $faq)
+                        <div class="card">
+                            <div class="card-header">
+                                {{ $faq->question }}
+                            </div>
+                            <div class="card-body">
+                                {{ $faq->answer }}
+                            </div>
+                        </div> <br>
+                    @endforeach
+
                 </div>
             </div>
         </div>

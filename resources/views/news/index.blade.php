@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends(auth()->check() && auth()->user()->is_admin ? 'layouts.adminPannel' : 'layouts.app')
 
 @section('content')
 <div class="container">

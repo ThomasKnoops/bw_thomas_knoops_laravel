@@ -11,4 +11,10 @@ class ContactController extends Controller
     {
         return view('contact.index');
     }
+
+    public function admin()
+    {
+        $contacts = Contact::all();
+        return view('contact.admin', ['contacts' => $contacts]);
+    }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/profile', [UserController::class, 'index'])->name('user.index');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 
 Auth::routes();

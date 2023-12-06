@@ -23,6 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
 // User pages
 Route::middleware(['auth'])->group(function () {

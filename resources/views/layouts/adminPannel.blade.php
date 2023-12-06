@@ -53,6 +53,7 @@
 
             <!-- Main Content -->
             <div class="col-md-9">
+                <br>
                 @yield('content')
             </div>
         </div>

@@ -8,7 +8,7 @@
                 <div class="card-header">Contact</div>
 
                 <div class="card-body">
-                    <form method="POST" action="TODO">
+                    <form method="POST" action="{{ route('contact.send') }}">
                         @csrf
 
                         <div class="row mb-3">

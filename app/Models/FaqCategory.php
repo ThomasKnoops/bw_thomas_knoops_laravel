@@ -9,6 +9,15 @@ class FaqCategory extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+    ];
+
     public function faqs()
     {
         return $this->hasMany(Faq::class, 'faq_category_id');

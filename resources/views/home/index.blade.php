@@ -18,7 +18,7 @@
     }
 
     .background-container {
-        background-image: url('{{ asset("images/civ-6.jpg") }}');
+        background-image: url('{{ asset("images/background.jpg") }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

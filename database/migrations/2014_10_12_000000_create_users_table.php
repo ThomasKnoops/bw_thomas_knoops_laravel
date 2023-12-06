@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->timestamp('birthday')->nullable();
+            $table->text('profile_photo_path')->default('assets("images/avatars/default.png")');
+            $table->text('bio')->default("Im new here!");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_admin')->default(false);

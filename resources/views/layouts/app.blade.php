@@ -24,7 +24,7 @@
                     Home
                 </a>
                 @auth
-                <a class="navbar-brand" href="{{ url('/profiles') }}">
+                <a class="navbar-brand" href="{{ url('/profile') }}">
                     Profiles
                 </a>
                 @endauth

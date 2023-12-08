@@ -5,8 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- Outer card header -->
                 <div class="card-header"><h1>Public Profiles</h1></div>
-
+                <!-- Outer card body -->
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -16,6 +17,7 @@
 
                     @foreach($users as $user)
                         <div class="card">
+                            <!-- Inner card header -->
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -37,11 +39,9 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- Inner card body -->
                             <div class="card-body">
-                                
                                 {{ $user->bio }}
-                                 
                             </div>
                         </div> <br>
                     @endforeach

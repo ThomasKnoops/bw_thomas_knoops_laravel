@@ -5,8 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- Outer card header -->
                 <div class="card-header"><h1>FAQ</h1></div>
-
+                <!-- Outer card body -->
                 <div class="card-body">
                     @if (session('success'))
                         <div class="alert alert-success" role="alert">
@@ -20,6 +21,7 @@
 
                     @foreach($faq_categories as $category)
                         <div class="card">
+                            <!-- Inner card header (category) -->
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -37,9 +39,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Inner card body (category) -->
                             <div class="card-body">
                                 @foreach($category->faqs as $faq)
                                     <div class="card">
+                                        <!-- Inner Inner card header (question) -->
                                         <div class="card-header">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -58,6 +62,7 @@
                                             </div>
                                             
                                         </div>
+                                        <!-- Inner Inner card body (answer) -->
                                         <div class="card-body">
                                             {{ $faq->answer }}
                                         </div>

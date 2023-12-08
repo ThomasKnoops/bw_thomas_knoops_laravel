@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- Outer card header -->
                 <div class="card-header"><h1>Contact</h1></div>
+                    <!-- Outer card body -->
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -15,6 +17,7 @@
 
                         @foreach($contacts as $contact)
                             <div class="card">
+                                <!-- Inner card header -->
                                 <div class="card-header">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -25,6 +28,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Inner card body -->
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">

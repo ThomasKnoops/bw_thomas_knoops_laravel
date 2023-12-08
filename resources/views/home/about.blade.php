@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- Outer card header -->
                 <div class="card-header"><h1>About</h1></div>
+                <!-- Outer card body -->
                 <div class="card-body">
                     <p>Edit profile is 'hidden' under your own name when logged in.</p>
                     <p>Sources:</p>

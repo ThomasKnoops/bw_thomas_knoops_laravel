@@ -8,6 +8,7 @@ use App\Models\FaqCategory;
 
 class FaqController extends Controller
 {
+    // View contact page
     public function index()
     {
         // Fetch all FAQ categories
@@ -16,11 +17,13 @@ class FaqController extends Controller
         return view('faq.index', compact('faq_categories'));
     }
 
+    // Admin add FAQ category
     public function createCategory()
     {
         return view('faq.createCategory');
     }
 
+    // Admin store FAQ category
     public function storeCategory(Request $request)
     {
         $request->validate([
@@ -34,11 +37,13 @@ class FaqController extends Controller
         return redirect()->route('faq.index')->with('success', 'FAQ category created successfully!');
     }
 
+    // Admin edit FAQ category
     public function editCategory(FaqCategory $faqcat)
     {
         return view('faq.editCategory', compact('faqcat'));
     }
 
+    // Admin update FAQ category
     public function updateCategory(Request $request, FaqCategory $faqcat)
     {
         $request->validate([
@@ -52,6 +57,7 @@ class FaqController extends Controller
         return redirect()->route('faq.index')->with('success', 'FAQ category updated successfully!');
     }
 
+    // Admin delete FAQ category
     public function deleteCategory(FaqCategory $faqcat)
     {
         if($faqcat->faqs->count() > 0) {
@@ -63,6 +69,7 @@ class FaqController extends Controller
         return redirect()->route('faq.index')->with('success', 'FAQ category deleted successfully!');
     }
 
+    // Admin add FAQ question
     public function createQuestion()
     {
         $faq_categories = FaqCategory::all();
@@ -70,6 +77,7 @@ class FaqController extends Controller
         return view('faq.createQuestion', compact('faq_categories'));
     }
 
+    // Admin store FAQ question
     public function storeQuestion(Request $request)
     {
         $request->validate([
@@ -87,6 +95,7 @@ class FaqController extends Controller
         return redirect()->route('faq.index')->with('success', 'FAQ created successfully!');
     }
 
+    // Admin edit FAQ question
     public function editQuestion(Faq $faq)
     {
         $faq_categories = FaqCategory::all();
@@ -94,6 +103,7 @@ class FaqController extends Controller
         return view('faq.editQuestion', compact('faq', 'faq_categories'));
     }
 
+    // Admin update FAQ question
     public function updateQuestion(Request $request, Faq $faq)
     {
         $request->validate([
@@ -111,6 +121,7 @@ class FaqController extends Controller
         return redirect()->route('faq.index')->with('success', 'FAQ updated successfully!');
     }
 
+    // Admin delete FAQ question
     public function deleteQuestion(Faq $faq)
     {
         $faq->delete();

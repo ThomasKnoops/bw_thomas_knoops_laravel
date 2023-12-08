@@ -7,11 +7,13 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
+    // User view contact page
     public function index()
     {
         return view('contact.index');
     }
 
+    // User send contact message
     public function send(Request $request)
     {
         $request->validate([
@@ -27,6 +29,7 @@ class ContactController extends Controller
         return redirect()->route('contact.index')->with('success', 'Your message has been sent!');
     }
 
+    // Admin view contact messages
     public function admin()
     {
         $contacts = Contact::all();

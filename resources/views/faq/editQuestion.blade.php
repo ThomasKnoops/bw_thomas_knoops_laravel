@@ -5,8 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- Outer card header -->
                 <div class="card-header"><h1>Add FAQ Question</h1></div>
-
+                <!-- Outer card body -->
                 <div class="card-body">
                     <form method="POST" action="{{ route('faq.updateQuestion', $faq) }}">
                         @csrf

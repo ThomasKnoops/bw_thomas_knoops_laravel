@@ -8,18 +8,21 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    // View users page
     public function index()
     {
         $users = User::all();
         return view('user.index', compact('users'));
     }
 
+    // Edit user profile
     public function editProfile()
     {
         $user = auth()->user();
         return view('user.editProfile', compact('user'));
     }
 
+    // Update user profile
     public function updateProfile(Request $request)
     {
         $user = auth()->user();
@@ -51,6 +54,7 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('status', 'Profile updated successfully!');
     }
 
+    // Admin make user admin
     public function makeAdmin(User $user)
     {
         $user->update(['is_admin' => true]);

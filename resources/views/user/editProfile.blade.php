@@ -5,8 +5,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
+                    <!-- Outer card header -->
                     <div class="card-header"><h1>Edit Profile</h1></div>
-
+                    <!-- Outer card body -->
                     <div class="card-body">
                         @if ($errors->has('avatar'))
                             <div class="alert alert-danger" role="alert">

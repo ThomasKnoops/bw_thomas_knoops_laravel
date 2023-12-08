@@ -25,17 +25,18 @@
 
                     <!-- User Section -->
                     <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action">View Users</a>
+                    <a href="{{ route('user.editProfile') }}" class="list-group-item list-group-item-action">Edit Profile</a>
                     <hr>
 
                     <!-- News Section -->
                     <a href="{{ route('news.index') }}" class="list-group-item list-group-item-action">View News</a>
-                    <a href="{{ route('admin.addNews') }}" class="list-group-item list-group-item-action">Add News</a>
+                    <a href="{{ route('news.create') }}" class="list-group-item list-group-item-action">Add News</a>
                     <hr>
 
                     <!-- FAQ Section -->
                     <a href="{{ route('faq.index') }}" class="list-group-item list-group-item-action">View FAQ</a>
-                    <a href="{{ route('admin.addFaqCategory') }}" class="list-group-item list-group-item-action">Add FAQ Category</a>
-                    <a href="{{ route('admin.addFaqQuestion') }}" class="list-group-item list-group-item-action">Add FAQ Question</a>
+                    <a href="{{ route('faq.createCategory') }}" class="list-group-item list-group-item-action">Add FAQ Category</a>
+                    <a href="{{ route('faq.createQuestion') }}" class="list-group-item list-group-item-action">Add FAQ Question</a>
                     <hr>
 
                     <!-- Other Sections -->

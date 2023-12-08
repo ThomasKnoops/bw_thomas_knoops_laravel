@@ -24,7 +24,7 @@
 
                             <div class="mb-3">
                                 <label for="birthday" class="form-label">Birthday</label>
-                                <input type="date" class="form-control" id="birthday" name="birthday" value="{{ old('birthday', $user->birthday) }}" required>
+                                <input type="date" class="form-control" id="birthday" name="birthday" value="{{ old('birthday', $user->birthday->format('d/m/Y')) }}" required>
                             </div>
 
                             <div class="mb-3">
@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="avatar" class="form-label">Avatar</label>
+                                <label for="avatar" class="form-label">New Avatar</label>
                                 <input type="file" class="form-control" id="avatar" name="avatar">
                             </div>
 

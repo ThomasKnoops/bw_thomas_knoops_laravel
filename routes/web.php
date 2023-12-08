@@ -35,15 +35,19 @@ Route::middleware(['auth'])->group(function () {
 // Admin pages
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/user/make-admin/{user}', [UserController::class, 'makeAdmin'])->name('user.makeAdmin');
-    Route::post('/news/create', [NewsController::class, 'create'])->name('admin.addNews');
-    Route::put('/news/update/{news}', [NewsController::class, 'update'])->name('admin.editNews');
-    Route::delete('/news/delete/{news}', [NewsController::class, 'delete'])->name('admin.deleteNews');
-    Route::post('/faqcat/create', [FaqController::class, 'create'])->name('admin.addFaqCategory');
-    Route::put('/faqcat/update/{faqcat}', [FaqController::class, 'update'])->name('admin.editFaqCategory');
-    Route::delete('/faqcat/delete/{faqcat}', [FaqController::class, 'delete'])->name('admin.deleteFaqCategory');
-    Route::post('/faq/create', [FaqController::class, 'createQuestion'])->name('admin.addFaqQuestion');
-    Route::put('/faq/update/{faq}', [FaqController::class, 'updateQuestion'])->name('admin.editFaqQuestion');
-    Route::delete('/faq/delete/{faq}', [FaqController::class, 'deleteQuestion'])->name('admin.deleteFaqQuestion');
+    Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
+    Route::post('/news/create', [NewsController::class, 'store'])->name('news.storeNews');
+    Route::get('/news/update/{news}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('/news/update/{news}', [NewsController::class, 'update'])->name('news.update');
+    Route::delete('/news/delete/{news}', [NewsController::class, 'delete'])->name('news.delete');
+    Route::get('/faqcat/create', [FaqController::class, 'create'])->name('faq.createCategory');
+    Route::post('/faqcat/create', [FaqController::class, 'store'])->name('faq.storeCategory');
+    Route::put('/faqcat/update/{faqcat}', [FaqController::class, 'update'])->name('faq.editCategory');
+    Route::delete('/faqcat/delete/{faqcat}', [FaqController::class, 'delete'])->name('faq.deleteCategory');
+    Route::get('/faq/create', [FaqController::class, 'createQuestion'])->name('faq.createQuestion');
+    Route::post('/faq/create', [FaqController::class, 'storeQuestion'])->name('faq.storeQuestion');
+    Route::put('/faq/update/{faq}', [FaqController::class, 'updateQuestion'])->name('faq.editQuestion');
+    Route::delete('/faq/delete/{faq}', [FaqController::class, 'deleteQuestion'])->name('faq.deleteQuestion');
     Route::get('/contact/admin', [ContactController::class, 'admin'])->name('admin.viewContactForms');
 });
 

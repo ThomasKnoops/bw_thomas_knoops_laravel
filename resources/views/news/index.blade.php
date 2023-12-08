@@ -22,7 +22,21 @@
                                         <h1>{{ $news->title }}</h1>
                                     </div>
                                     <div class="col-md-6 text-end">
-                                        <small>{{ $news->created_at->format('d/m/y \o\m H:i') }}</small>
+                                        <p class="mb-1"><small>{{ $news->created_at->format('d/m/y \a\t H:i') }}</small></p>
+                                        @if($news->updated_at != $news->created_at)
+                                            <p class="mb-1"><small> Updated: {{ $news->updated_at->format('d/m/y \a\t H:i') }}</small></p>
+                                        @endif
+                                        @if(Auth::user()->is_admin)
+                                        <form action="{{ route('news.edit', $news->id) }}" method="GET">
+                                            @csrf
+                                            <button type="submit" class="btn btn-primary">Edit news</button>
+                                        </form>
+                                        <form action="{{ route('news.delete', $news->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete news</button>
+                                        </form>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

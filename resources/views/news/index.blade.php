@@ -26,7 +26,7 @@
                                         @if($news->updated_at != $news->created_at)
                                             <p class="mb-1"><small> Updated: {{ $news->updated_at->format('d/m/y \a\t H:i') }}</small></p>
                                         @endif
-                                        @if(Auth::user()->is_admin)
+                                        @if(auth()->check() && Auth::user()->is_admin)
                                         <form action="{{ route('news.edit', $news->id) }}" method="GET">
                                             @csrf
                                             <button type="submit" class="btn btn-primary">Edit news</button>

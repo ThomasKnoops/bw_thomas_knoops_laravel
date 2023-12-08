@@ -22,7 +22,7 @@
                                         {{ $category->name }}                                    
                                     </div>
                                     <div class="col-md-6 text-end">
-                                        @if(auth()->user()->is_admin)
+                                        @if(auth()->check() && auth()->user()->is_admin)
                                             <a href="{{ route('faq.editCategory', $category->id) }}" class="btn btn-primary">Edit</a>
                                             <form action="{{ route('faq.deleteCategory', $category->id) }}" method="POST" class="d-inline">
                                                 @csrf
@@ -42,7 +42,7 @@
                                                     {{ $faq->question }}                                  
                                                 </div>
                                                 <div class="col-md-6 text-end">
-                                                    @if(auth()->user()->is_admin)
+                                                    @if(auth()->check() && auth()->user()->is_admin)
                                                         <a href="{{ route('faq.editQuestion', $faq->id) }}" class="btn btn-primary">Edit</a>
                                                         <form action="{{ route('faq.deleteQuestion', $faq->id) }}" method="POST" class="d-inline">
                                                             @csrf

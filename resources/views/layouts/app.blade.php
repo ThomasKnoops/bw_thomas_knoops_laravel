@@ -36,6 +36,9 @@
                 <a class="navbar-brand" href="{{ url('/faq') }}">
                     Faq
                 </a>
+                <a class="navbar-brand" href="{{ url('/about') }}">
+                    About
+                </a>
                 <a class="navbar-brand" href="{{ url('/contact') }}">
                     Contact
                 </a>

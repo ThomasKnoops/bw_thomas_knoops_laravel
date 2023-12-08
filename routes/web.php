@@ -20,6 +20,7 @@ use App\Http\Controllers\ContactController;
 
 // Public pages
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/about', [HomeController::class, 'about'])->name('home.about');
 Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');

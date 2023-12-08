@@ -24,7 +24,7 @@
 
                             <div class="mb-3">
                                 <label for="birthday" class="form-label">Birthday</label>
-                                <input type="date" class="form-control" id="birthday" name="birthday" value="{{ old('birthday', $user->birthday->format('d/m/Y')) }}" required>
+                                <input type="date" class="form-control" id="birthday" name="birthday" value="{{$user->birthday->format('Y-m-d')}}" required>
                             </div>
 
                             <div class="mb-3">

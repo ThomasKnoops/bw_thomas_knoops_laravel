@@ -25,6 +25,7 @@
 
                     <!-- Home Section -->
                     <a href="{{ route('home.index') }}" class="list-group-item list-group-item-action">Home</a>
+                    <a href="{{ route('home.about') }}" class="list-group-item list-group-item-action">About</a>
                     <hr>
 
                     <!-- User Section -->

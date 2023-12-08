@@ -8,6 +8,11 @@
                     <div class="card-header"><h1>Edit Profile</h1></div>
 
                     <div class="card-body">
+                        @if ($errors->has('avatar'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('avatar') }}
+                            </div>
+                        @endif
                         <form method="POST" action="{{ route('user.updateProfile') }}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')

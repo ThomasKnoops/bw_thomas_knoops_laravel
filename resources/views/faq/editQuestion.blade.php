@@ -30,7 +30,7 @@
                             <label for="answer" class="col-md-4 col-form-label text-md-end">Answer</label>
 
                             <div class="col-md-6">
-                                <input id="answer" type="string" class="form-control @error('answer') is-invalid @enderror" name="answer" value="{{ old('answer', $faq->answer) }}" required>
+                            <textarea id="answer" class="form-control @error('answer') is-invalid @enderror" name="answer" rows="10" required> {{ old('answer', $faq->answer) }} </textarea>
 
                                 @error('answer')
                                     <span class="invalid-feedback" role="alert">

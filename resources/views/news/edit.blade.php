@@ -8,6 +8,11 @@
                 <div class="card-header"><h1>Edit News</h1></div>
 
                 <div class="card-body">
+                    @if ($errors->has('cover'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ $errors->first('cover') }}
+                        </div>
+                    @endif
                     <form method="POST" action="{{ route('news.update', $news) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')

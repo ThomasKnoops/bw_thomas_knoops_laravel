@@ -34,7 +34,7 @@
                             <label for="message" class="col-md-4 col-form-label text-md-end">{{ __('Message') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" rows=10 required> </textarea>
+                                <textarea id="message" class="form-control @error('message') is-invalid @enderror" name="message" rows="10" required> </textarea>
 
                                 @error('message')
                                     <span class="invalid-feedback" role="alert">

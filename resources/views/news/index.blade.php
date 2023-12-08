@@ -19,7 +19,7 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h1>{{ $news->title }}</h1>
+                                        <h2>{{ $news->title }}</h2>
                                     </div>
                                     <div class="col-md-6 text-end">
                                         <p class="mb-1"><small>{{ $news->created_at->format('d/m/y \a\t H:i') }}</small></p>

@@ -8,9 +8,13 @@
                 <div class="card-header"><h1>FAQ</h1></div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    @if (session('success'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            {{ session('success') }}
+                        </div>
+                    @elseif(session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
                         </div>
                     @endif
 
@@ -19,7 +23,7 @@
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        {{ $category->name }}                                    
+                                        <h3> {{ $category->name }} </h3>                                 
                                     </div>
                                     <div class="col-md-6 text-end">
                                         @if(auth()->check() && auth()->user()->is_admin)
@@ -39,7 +43,7 @@
                                         <div class="card-header">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    {{ $faq->question }}                                  
+                                                    <h5> {{ $faq->question }} </h5>                               
                                                 </div>
                                                 <div class="col-md-6 text-end">
                                                     @if(auth()->check() && auth()->user()->is_admin)

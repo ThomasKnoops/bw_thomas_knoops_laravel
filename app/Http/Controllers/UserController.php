@@ -27,6 +27,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
+            'birthday' => 'required|date',
             'bio' => 'required|string|max:500',
             'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
@@ -34,6 +35,7 @@ class UserController extends Controller
         $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'birthday' => $request->input('birthday'),
             'bio' => $request->input('bio'),
         ]);
 

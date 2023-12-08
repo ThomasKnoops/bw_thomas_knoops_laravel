@@ -23,6 +23,11 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="birthday" class="form-label">Birthday</label>
+                                <input type="date" class="form-control" id="birthday" name="birthday" value="{{ old('birthday', $user->birthday) }}" required>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="bio" class="form-label">Bio</label>
                                 <textarea class="form-control" id="bio" name="bio" rows="3" required>{{ old('bio', $user->bio) }}</textarea>
                             </div>

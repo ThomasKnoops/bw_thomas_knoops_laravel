@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="col-md-6 text-end">
                                         <h3>{{ $user->name }}</h3>
-                                        <h4>{{ $user->birthday }}</h4>
+                                        <h4>{{ $user->birthday->format('d/m/Y') }}</h4>
                                         @if($user->is_admin)
                                             <h4>Admin</h4>
                                         @endif

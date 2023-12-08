@@ -24,7 +24,7 @@ class FaqController extends Controller
     public function storeCategory(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:faq_categories'
+            'name' => 'required|unique:faq_categories|string|max:255'
         ]);
 
         FaqCategory::create([
@@ -42,7 +42,7 @@ class FaqController extends Controller
     public function updateCategory(Request $request, FaqCategory $faqcat)
     {
         $request->validate([
-            'name' => 'required|unique:faq_categories'
+            'name' => 'required|unique:faq_categories|string|max:255'
         ]);
 
         $faqcat->update([
@@ -73,8 +73,8 @@ class FaqController extends Controller
     public function storeQuestion(Request $request)
     {
         $request->validate([
-            'question' => 'required',
-            'answer' => 'required',
+            'question' => 'required|string|max:255',
+            'answer' => 'required|text',
             'faq_category_id' => 'required'
         ]);
 
@@ -97,8 +97,8 @@ class FaqController extends Controller
     public function updateQuestion(Request $request, Faq $faq)
     {
         $request->validate([
-            'question' => 'required',
-            'answer' => 'required',
+            'question' => 'required|string|max:255',
+            'answer' => 'required|text',
             'faq_category_id' => 'required'
         ]);
 

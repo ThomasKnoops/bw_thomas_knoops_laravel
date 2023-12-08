@@ -1,11 +1,11 @@
-@extends(auth()->check() && auth()->user()->is_admin ? 'layouts.adminPannel' : 'layouts.app')
+@extends(auth()->check() && auth()->user()->is_admin ? 'layouts.adminPanel' : 'layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Latest News</div>
+                <div class="card-header"><h1>Latest News</h1></div>
 
                 <div class="card-body">
                     @if (session('status'))

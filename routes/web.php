@@ -34,12 +34,17 @@ Route::middleware(['auth'])->group(function () {
 
 // Admin pages
 Route::middleware(['auth', 'admin'])->group(function () {
+    // User management
     Route::put('/user/make-admin/{user}', [UserController::class, 'makeAdmin'])->name('user.makeAdmin');
+
+    // News management
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/news/create', [NewsController::class, 'store'])->name('news.storeNews');
     Route::get('/news/update/{news}', [NewsController::class, 'edit'])->name('news.edit');
     Route::put('/news/update/{news}', [NewsController::class, 'update'])->name('news.update');
     Route::delete('/news/delete/{news}', [NewsController::class, 'delete'])->name('news.delete');
+
+    // FAQ management
     Route::get('/faqcat/create', [FaqController::class, 'createCategory'])->name('faq.createCategory');
     Route::post('/faqcat/create', [FaqController::class, 'storeCategory'])->name('faq.storeCategory');
     Route::get('/faqcat/update/{faqcat}', [FaqController::class, 'editCategory'])->name('faq.editCategory');
@@ -50,7 +55,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/faq/update/{faq}', [FaqController::class, 'editQuestion'])->name('faq.editQuestion');
     Route::put('/faq/update/{faq}', [FaqController::class, 'updateQuestion'])->name('faq.updateQuestion');
     Route::delete('/faq/delete/{faq}', [FaqController::class, 'deleteQuestion'])->name('faq.deleteQuestion');
+
+    // Contact management
     Route::get('/contact/admin', [ContactController::class, 'admin'])->name('admin.viewContactForms');
 });
 
+// Authentication
 Auth::routes();

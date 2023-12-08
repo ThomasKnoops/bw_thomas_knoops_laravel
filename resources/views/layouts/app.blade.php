@@ -18,7 +18,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Home
@@ -92,7 +94,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 mt-5 mx-auto">
             @yield('content')
         </main>
     </div>

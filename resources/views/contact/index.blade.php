@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Contact</div>
+                <div class="card-header"><h1>Contact</h1></div>
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('contact.send') }}">

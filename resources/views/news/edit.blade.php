@@ -1,11 +1,11 @@
-@extends('layouts.adminPannel')
+@extends('layouts.adminPanel')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Edit News</div>
+                <div class="card-header"><h1>Edit News</h1></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('news.update', $news) }}" enctype="multipart/form-data">

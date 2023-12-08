@@ -17,11 +17,15 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- Center the Sidebar using flexbox -->
-            <div class="col-md-3 d-flex align-items-center vh-100">
+            <div class="col-md-3 d-flex align-items-center vh-100 position-fixed">
                 <div class="list-group">
+
+                    <!-- Home Section -->
+                    <a href="{{ route('home.index') }}" class="list-group-item list-group-item-action">Home</a>
+                    <hr>
 
                     <!-- User Section -->
                     <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action">View Users</a>
@@ -53,7 +57,7 @@
             </div>
 
             <!-- Main Content -->
-            <div class="col-md-9">
+            <div class="col-md-9 mx-auto">
                 <br>
                 @yield('content')
             </div>

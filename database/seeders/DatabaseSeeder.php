@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use \App\Models\User;
+use \App\Models\Follow;
 use \App\Models\News;
 use \App\Models\Comment;
 use \App\Models\FaqCategory;
@@ -35,6 +36,19 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('Password!321'),
                 'birthday' => '2000-01-01',
             ]);
+        }
+
+        // Seeder for follows
+        for ($i=1; $i < 12; $i++) { 
+            for ($j=1; $j < 4; $j++) { 
+                $k = rand(1, 11);
+                if ($i != $k) {
+                    Follow::factory()->create([
+                        'follower_id' => $i,
+                        'following_id' => $k,
+                    ]);
+                }
+            }
         }
 
         // Seeder for news

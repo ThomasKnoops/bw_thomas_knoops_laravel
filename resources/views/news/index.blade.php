@@ -72,10 +72,15 @@
                                 @foreach($news->comments as $comment)
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p> {{ $comment->body }} </p>
+                                        <p style="{{ auth()->user() && auth()->user()->isFollowing($comment->user) ? 'color: blue;' : '' }}">
+                                            {{ $comment->body }}
+                                        </p>
+
                                         </div>
                                         <div class="col-md-6 text-end">
-                                            <p class="mb-1"><small>{{ $comment->created_at->format('d/m/y \a\t H:i') }} by {{ $comment->user->name }}</small></p>
+                                            <p class="mb-1" style="{{ auth()->user() && auth()->user()->isFollowing($comment->user) ? 'color: blue;' : '' }}">
+                                                <small>{{ $comment->created_at->format('d/m/y \a\t H:i') }} by {{ $comment->user->name }}</small>
+                                            </p>
                                         </div>
                                     </div>
                                 @endforeach

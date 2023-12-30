@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/edit-profile', [UserController::class, 'editProfile'])->name('user.editProfile');
     Route::put('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.updateProfile');
+    Route::post('/follow/{user}', [FollowController::class, 'followUser'])->name('user.follow');
+    Route::delete('/unfollow/{user}', [FollowController::class, 'unfollowUser'])->name('user.unfollow');
     Route::post('/comment/create/{news}', [CommentController::class, 'postComment'])->name('comment.post');
 });
 

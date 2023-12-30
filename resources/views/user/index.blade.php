@@ -41,9 +41,28 @@
                             </div>
                             <!-- Inner card body -->
                             <div class="card-body">
-                                {{ $user->bio }}
-                            </div>
-                        </div> <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        {{ $user->bio }}
+                                    </div>
+                                    <div class="col-md-6 text-end">
+                                        @if(Auth::user()->id == $user->id)
+                                            <p><small>Followers: {{ $user->followers->count() }}</small></p>
+                                        @elseif(Auth::user()->following->contains($user))
+                                            <form action="{{ route('user.unfollow', $user->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Unfollow</button>
+                                            </form>
+                                        @else
+                                            <form action="{{ route('user.follow', $user->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Follow</button>
+                                            </form>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div> <br>
                     @endforeach
 
                 </div>

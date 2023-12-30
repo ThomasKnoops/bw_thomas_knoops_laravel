@@ -1,6 +1,6 @@
-# Project Name
+# Backend Web - Laravel Application
 
-Description of your project.
+This is an application made for my course backend web at Erasmus Hogeschool Brussels
 
 ## Edit Profile
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use \App\Models\User;
 use \App\Models\News;
+use \App\Models\Comment;
 use \App\Models\FaqCategory;
 use \App\Models\Faq;
 
@@ -43,6 +44,14 @@ class DatabaseSeeder extends Seeder
                 'body' => file_get_contents('http://loripsum.net/api/short/plaintext'),
                 'cover_photo_path' => 'images/covers/placeholder.png',
             ]);
+        }
+
+        // Seeder for comments
+        for ($i=1; $i < 16; $i++) { 
+            Comment::factory()->create([
+                'body' => 'Comment '.$i,
+            ]);
+            
         }
 
         // Seeder for faq categories

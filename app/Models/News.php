@@ -19,4 +19,9 @@ class News extends Model
         'body',
         'cover_photo_path',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'news_id');
+    }
 }

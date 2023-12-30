@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,12 @@ Route::get('/faq', [FaqController::class, 'index'])->name('faq.index');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
-// User pages
+// auth pages
 Route::middleware(['auth'])->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/edit-profile', [UserController::class, 'editProfile'])->name('user.editProfile');
     Route::put('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.updateProfile');
+    Route::post('/comment/create/{news}', [CommentController::class, 'postComment'])->name('comment.post');
 });
 
 // Admin pages

@@ -53,6 +53,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Inner card footer -->
+                            <div class="card-footer" style="margin-bottom: 20px;">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        @if(auth()->check())
+                                        <form action="{{ route('comment.post', $news->id) }}" method="POST">
+                                            @csrf
+                                            <textarea class="form-control" name="body" rows="1" placeholder="Leave a comment"></textarea>
+                                            <button type="submit" class="btn btn-primary">Comment</button>
+                                        </form>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-6 text-end">
+                                        <p class="mb-1"><small>Comments: {{ $news->comments->count() }}</small></p>
+                                    </div>
+                                </div> <hr>
+                                @foreach($news->comments as $comment)
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p> {{ $comment->body }} </p>
+                                        </div>
+                                        <div class="col-md-6 text-end">
+                                            <p class="mb-1"><small>{{ $comment->created_at->format('d/m/y \a\t H:i') }} by {{ $comment->user->name }}</small></p>
+                                        </div>
+                                    </div>
+                                @endforeach
                         </div> <br>
                     @endforeach
 

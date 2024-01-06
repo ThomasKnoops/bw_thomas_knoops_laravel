@@ -108,7 +108,7 @@ class FaqController extends Controller
     {
         $request->validate([
             'question' => 'required|string|max:255',
-            'answer' => 'required|text',
+            'answer' => 'required|string',
             'faq_category_id' => 'required'
         ]);
 
